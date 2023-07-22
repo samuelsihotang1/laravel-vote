@@ -1,13 +1,13 @@
 <?php
 
-namespace Jcc\LaravelVote\Tests;
+namespace samuelsihotang1\LaravelVote\Tests;
 
 use Illuminate\Database\Eloquent\Model;
-use Jcc\LaravelVote\Traits\Votable;
+use samuelsihotang1\LaravelVote\Traits\Votable;
 
 class Post extends Model
 {
-    use Votable;
+  use Votable;
 
-    protected $fillable = ['title'];
+  protected $fillable = ['title'];
 }

@@ -1,15 +1,15 @@
 <?php
 
-namespace Jcc\LaravelVote\Tests;
+namespace samuelsihotang1\LaravelVote\Tests;
 
 use Illuminate\Database\Eloquent\Model;
-use Jcc\LaravelVote\Traits\Votable;
-use Jcc\LaravelVote\Traits\Voter;
+use samuelsihotang1\LaravelVote\Traits\Votable;
+use samuelsihotang1\LaravelVote\Traits\Voter;
 
 class User extends Model
 {
-    use Voter;
-    use Votable;
+  use Voter;
+  use Votable;
 
-    protected $fillable = ['name'];
+  protected $fillable = ['name'];
 }

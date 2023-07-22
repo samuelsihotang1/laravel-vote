@@ -1,23 +1,23 @@
 <?php
 
-namespace Jcc\LaravelVote\Events;
+namespace samuelsihotang1\LaravelVote\Events;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Event
 {
-    /**
-     * @var \Illuminate\Database\Eloquent\Model
-     */
-    public $vote;
+  /**
+   * @var \Illuminate\Database\Eloquent\Model
+   */
+  public $vote;
 
-    /**
-     * Event constructor.
-     *
-     * @param \Illuminate\Database\Eloquent\Model $vote
-     */
-    public function __construct(Model $vote)
-    {
-        $this->vote = $vote;
-    }
+  /**
+   * Event constructor.
+   *
+   * @param \Illuminate\Database\Eloquent\Model $vote
+   */
+  public function __construct(Model $vote)
+  {
+    $this->vote = $vote;
+  }
 }

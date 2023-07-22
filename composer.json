@@ -1,6 +1,6 @@
 {
   "name": "samuelsihotang1/laravel-vote",
-  "description": "The package helps you to add user based vote system to your model, fork from jcc/laravel-vote",
+  "description": "The package helps you to add user based vote system to your model, fork from samuelsihotang1/laravel-vote",
   "authors": [
     {
       "name": "samuelsihotang1",
@@ -21,18 +21,18 @@
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "Jcc\\LaravelVote\\": "src"
+      "samuelsihotang1\\LaravelVote\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Jcc\\LaravelVote\\Tests\\": "tests"
+      "samuelsihotang1\\LaravelVote\\Tests\\": "tests"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Jcc\\LaravelVote\\VoteServiceProvider"
+        "samuelsihotang1\\LaravelVote\\VoteServiceProvider"
       ]
     }
   },

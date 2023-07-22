@@ -1,11 +1,11 @@
 <?php
 
-namespace Jcc\LaravelVote\Traits;
+namespace samuelsihotang1\LaravelVote\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Jcc\LaravelVote\Vote;
-use Jcc\LaravelVote\VoteItems;
+use samuelsihotang1\LaravelVote\Vote;
+use samuelsihotang1\LaravelVote\VoteItems;
 use Illuminate\Support\Facades\App;
 
 
@@ -19,8 +19,8 @@ trait Voter
   /**
    * @param Model  $object
    * @param string $type
-   * @return \Jcc\LaravelVote\Vote
-   * @throws \Jcc\LaravelVote\Exceptions\UnexpectValueException
+   * @return \samuelsihotang1\LaravelVote\Vote
+   * @throws \samuelsihotang1\LaravelVote\Exceptions\UnexpectValueException
    */
   public function vote(Model $object, string $type): Vote
   {
@@ -78,7 +78,7 @@ trait Voter
    */
   public function cancelVote(Model $object): bool
   {
-    /* @var \Jcc\LaravelVote\Vote $relation */
+    /* @var \samuelsihotang1\LaravelVote\Vote $relation */
     $relation = app(config('vote.vote_model'))
       ->where('votable_id', $object->getKey())
       ->where('votable_type', $object->getMorphClass())

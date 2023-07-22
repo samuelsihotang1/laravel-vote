@@ -1,9 +1,9 @@
 <?php
 
-namespace Jcc\LaravelVote\Traits;
+namespace samuelsihotang1\LaravelVote\Traits;
 
 use Illuminate\Database\Eloquent\Model;
-use Jcc\LaravelVote\VoteItems;
+use samuelsihotang1\LaravelVote\VoteItems;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 

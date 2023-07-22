@@ -1,6 +1,6 @@
 <?php
 
-namespace Jcc\LaravelVote\Events;
+namespace samuelsihotang1\LaravelVote\Events;
 
 class CancelVoted extends Event
 {

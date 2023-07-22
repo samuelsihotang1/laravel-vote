@@ -1,42 +1,42 @@
 <?php
 
-namespace Jcc\LaravelVote;
+namespace samuelsihotang1\LaravelVote;
 
-use Jcc\LaravelVote\Exceptions\UnexpectValueException;
+use samuelsihotang1\LaravelVote\Exceptions\UnexpectValueException;
 use Stringable;
 
 final class VoteItems implements Stringable
 {
-    /**
-     * @var string
-     */
-    protected $value;
+  /**
+   * @var string
+   */
+  protected $value;
 
-    public const UP = 'up_vote';
+  public const UP = 'up_vote';
 
-    public const DOWN = 'down_vote';
+  public const DOWN = 'down_vote';
 
-    public function __construct(string $value)
-    {
-        if (!in_array($value, self::getValues(), true)) {
-            throw new UnexpectValueException("Unexpect Value: {$value}");
-        }
-        $this->value = $value;
+  public function __construct(string $value)
+  {
+    if (!in_array($value, self::getValues(), true)) {
+      throw new UnexpectValueException("Unexpect Value: {$value}");
     }
+    $this->value = $value;
+  }
 
-    /**
-     * @return string[]
-     */
-    public static function getValues(): array
-    {
-        return [self::UP, self::DOWN];
-    }
+  /**
+   * @return string[]
+   */
+  public static function getValues(): array
+  {
+    return [self::UP, self::DOWN];
+  }
 
-    /**
-     * @return string
-     */
-    public function __toString()
-    {
-        return $this->value;
-    }
+  /**
+   * @return string
+   */
+  public function __toString()
+  {
+    return $this->value;
+  }
 }

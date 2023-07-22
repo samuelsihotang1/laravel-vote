@@ -1,6 +1,6 @@
 <?php
 
-namespace Jcc\LaravelVote\Exceptions;
+namespace samuelsihotang1\LaravelVote\Exceptions;
 
 use Exception;
 

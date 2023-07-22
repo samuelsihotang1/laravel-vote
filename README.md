@@ -7,25 +7,25 @@
 You can install the package using Composer:
 
 ```sh
-$ composer require "jcc/laravel-vote:~2.0"
+$ composer require "samuelsihotang1/laravel-vote:~2.0"
 ```
 
 Then add the service provider to `config/app.php`:
 
 ```php
-Jcc\LaravelVote\VoteServiceProvider::class
+samuelsihotang1\LaravelVote\VoteServiceProvider::class
 ```
 
 Publish the migrations file:
 
 ```sh
-$ php artisan vendor:publish --provider="Jcc\LaravelVote\VoteServiceProvider" --tag="migrations"
+$ php artisan vendor:publish --provider="samuelsihotang1\LaravelVote\VoteServiceProvider" --tag="migrations"
 ```
 
 Finally, use VoteTrait in User model:
 
 ```php
-use Jcc\LaravelVote\Traits\Voter;
+use samuelsihotang1\LaravelVote\Traits\Voter;
 
 class User extends Model
 {
@@ -36,7 +36,7 @@ class User extends Model
 Or use CanBeVoted in Comment model:
 
 ```php
-use Jcc\LaravelVote\Traits\Votable;
+use samuelsihotang1\LaravelVote\Traits\Votable;
 
 class Comment extends Model
 {
@@ -186,11 +186,10 @@ foreach($comments as $comment) {
 
 ### Events
 
-| **Event** | **Description** |
-| --- | --- |
-|  `Jcc\LaravelVote\Events\Voted` | Triggered when the relationship is created or updated. |
-|  `Jcc\LaravelVote\Events\CancelVoted` | Triggered when the relationship is deleted. |
-
+| **Event**                                        | **Description**                                        |
+| ------------------------------------------------ | ------------------------------------------------------ |
+| `samuelsihotang1\LaravelVote\Events\Voted`       | Triggered when the relationship is created or updated. |
+| `samuelsihotang1\LaravelVote\Events\CancelVoted` | Triggered when the relationship is deleted.            |
 
 ## Reference
 
