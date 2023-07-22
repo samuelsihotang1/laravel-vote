@@ -111,18 +111,17 @@ trait Voter
    */
   public function getVotedItems(string $model, ?string $type = null)
   {
-    return \app($model)->whereHas(
+    return app($model)::whereHas(
       'voters',
       function ($builder) use ($type) {
-        return $builder->where(\config('vote.user_foreign_key'), $this->getKey())->when(
-          \is_string($type),
-          function ($builder) use ($type) {
+        return $builder->where(config('vote.user_foreign_key'), $this->getKey())
+          ->when(is_string($type), function ($builder) use ($type) {
             $builder->where('vote_type', (string)new VoteItems($type));
-          }
-        );
+          });
       }
     );
   }
+
 
   public function upVote(Model $object): Vote
   {
