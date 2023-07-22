@@ -8,6 +8,7 @@ use Jcc\LaravelVote\Vote;
 use Jcc\LaravelVote\VoteItems;
 use Illuminate\Support\Facades\App;
 
+
 /**
  * Trait Voter
  *
@@ -100,7 +101,7 @@ trait Voter
    */
   public function votes(): HasMany
   {
-    return $this->hasMany(\config('vote.vote_model'), \config('vote.user_foreign_key'), $this->getKeyName());
+    return $this->hasMany(config('vote.vote_model'), config('vote.user_foreign_key'), $this->getKeyName());
   }
 
   /**
