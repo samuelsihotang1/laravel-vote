@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Jcc\LaravelVote\Vote;
 use Jcc\LaravelVote\VoteItems;
+use Illuminate\Support\Facades\App;
 
 /**
  * Trait Voter
@@ -25,11 +26,11 @@ trait Voter
     $attributes = [
       'votable_type' => $object->getMorphClass(),
       'votable_id' => $object->getKey(),
-      \config('vote.user_foreign_key') => $this->getKey(),
+      config('vote.user_foreign_key') => $this->getKey(),
     ];
 
     /* @var \Illuminate\Database\Eloquent\Model $vote */
-    $vote = \app(\config('vote.vote_model'));
+    $vote = App::make(config('vote.vote_model'));
 
     $type = (string)new VoteItems($type);
 
@@ -51,6 +52,7 @@ trait Voter
     });
   }
 
+
   /**
    * @param \Illuminate\Database\Eloquent\Model $object
    *
@@ -61,11 +63,12 @@ trait Voter
     return ($this->relationLoaded('votes') ? $this->votes : $this->votes())
       ->where('votable_id', $object->getKey())
       ->where('votable_type', $object->getMorphClass())
-      ->when(\is_string($type), function ($builder) use ($type) {
-        $builder->where('vote_type', (string)new VoteItems($type));
+      ->when(\is_string($type), function ($query) use ($type) {
+        $query->where('vote_type', (string)new VoteItems($type));
       })
       ->count() > 0;
   }
+
 
   /**
    * @param Model $object
