@@ -68,7 +68,7 @@ trait Votable
    *
    * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
    */
-  public function upVoters(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+  public function upVoters(): BelongsToMany
   {
     return $this->voters()->where('vote_type', VoteItems::UP);
   }
@@ -88,7 +88,7 @@ trait Votable
    *
    * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
    */
-  public function downVoters(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+  public function downVoters(): BelongsToMany
   {
     return $this->voters()->where('vote_type', VoteItems::DOWN);
   }
