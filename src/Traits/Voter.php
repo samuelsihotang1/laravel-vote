@@ -78,10 +78,10 @@ trait Voter
   public function cancelVote(Model $object): bool
   {
     /* @var \Jcc\LaravelVote\Vote $relation */
-    $relation = \app(\config('vote.vote_model'))
+    $relation = app(config('vote.vote_model'))
       ->where('votable_id', $object->getKey())
       ->where('votable_type', $object->getMorphClass())
-      ->where(\config('vote.user_foreign_key'), $this->getKey())
+      ->where(config('vote.user_foreign_key'), $this->getKey())
       ->first();
 
     if ($relation) {
