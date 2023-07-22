@@ -4,6 +4,8 @@ namespace Jcc\LaravelVote\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 use Jcc\LaravelVote\VoteItems;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+
 
 /**
  * Trait Votable
@@ -41,15 +43,14 @@ trait Votable
    *
    * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
    */
-  public function voters(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+  public function voters(): BelongsToMany
   {
     return $this->belongsToMany(
-      \config('auth.providers.users.model'),
-      \config('vote.votes_table'),
+      config('auth.providers.users.model'),
+      config('vote.votes_table'),
       'votable_id',
-      \config('vote.user_foreign_key')
-    )
-      ->where('votable_type', $this->getMorphClass());
+      config('vote.user_foreign_key')
+    )->where('votable_type', $this->getMorphClass());
   }
 
   /**
