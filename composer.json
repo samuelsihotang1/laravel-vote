@@ -1,47 +1,47 @@
 {
-    "name": "jcc/laravel-vote",
-    "description": "The package helps you to add user based vote system to your model",
-    "authors": [
-        {
-            "name": "jcc",
-            "email": "changejian@gmail.com"
-        }
-    ],
-    "require": {
-        "php": ">=7.2",
-        "laravel/framework": "^5.5|~6.0|~7.0|^8.83.27|~9.0|^10.0",
-        "symfony/polyfill-php80": "^1.27"
-    },
-    "require-dev": {
-        "mockery/mockery": "^1.6.4",
-        "orchestra/testbench": "^3.5|~4.0|~5.0|^6.28",
-        "friendsofphp/php-cs-fixer": "^2.19.3",
-        "phpstan/phpstan": "^0.12.100"
-    },
-    "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "Jcc\\LaravelVote\\": "src"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Jcc\\LaravelVote\\Tests\\": "tests"
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "Jcc\\LaravelVote\\VoteServiceProvider"
-            ]
-        }
-    },
-    "minimum-stability": "stable",
-    "prefer-stable": true,
-    "scripts": {
-        "check-style": "vendor/bin/php-cs-fixer fix --using-cache=no --diff --config=.php_cs --dry-run --ansi",
-        "fix-style": "vendor/bin/php-cs-fixer fix --using-cache=no --config=.php_cs --ansi",
-        "test": "vendor/bin/phpunit --colors=always",
-        "phpstan": "vendor/bin/phpstan analyse src -l 5"
+  "name": "samuelsihotang1/laravel-vote",
+  "description": "The package helps you to add user based vote system to your model, fork from jcc/laravel-vote",
+  "authors": [
+    {
+      "name": "samuelsihotang1",
+      "email": "samuelsihotang1@gmail.com"
     }
+  ],
+  "require": {
+    "php": ">=7.2",
+    "laravel/framework": "^5.5|~6.0|~7.0|^8.83.27|~9.0|^10.0",
+    "symfony/polyfill-php80": "^1.27"
+  },
+  "require-dev": {
+    "mockery/mockery": "^1.6.4",
+    "orchestra/testbench": "^3.5|~4.0|~5.0|^6.28",
+    "friendsofphp/php-cs-fixer": "^2.19.3",
+    "phpstan/phpstan": "^0.12.100"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Jcc\\LaravelVote\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Jcc\\LaravelVote\\Tests\\": "tests"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Jcc\\LaravelVote\\VoteServiceProvider"
+      ]
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "scripts": {
+    "check-style": "vendor/bin/php-cs-fixer fix --using-cache=no --diff --config=.php_cs --dry-run --ansi",
+    "fix-style": "vendor/bin/php-cs-fixer fix --using-cache=no --config=.php_cs --ansi",
+    "test": "vendor/bin/phpunit --colors=always",
+    "phpstan": "vendor/bin/phpstan analyse src -l 5"
+  }
 }
