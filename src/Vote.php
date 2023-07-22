@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Facades\Auth;
 use Jcc\LaravelVote\Events\CancelVoted;
 use Jcc\LaravelVote\Events\Voted;
+use Illuminate\Database\Eloquent\Relations\BelongsTo
+
 
 /**
  * Class Vote
@@ -30,7 +32,7 @@ class Vote extends Model
    */
   public function __construct(array $attributes = [])
   {
-    $this->table = \config('vote.votes_table');
+    $this->table = config('vote.votes_table');
 
     parent::__construct($attributes);
   }
@@ -55,7 +57,7 @@ class Vote extends Model
    */
   public function user()
   {
-    return $this->belongsTo(\config('auth.providers.users.model'), \config('vote.user_foreign_key'));
+    return $this->belongsTo(config('auth.providers.users.model'), config('vote.user_foreign_key'));
   }
 
   /**
@@ -74,7 +76,7 @@ class Vote extends Model
    */
   public function scopeWithVotableType(Builder $query, string $type)
   {
-    return $query->where('votable_type', \app($type)->getMorphClass());
+    return $query->where('votable_type', App::make($type)->getMorphClass());
   }
 
   /**
