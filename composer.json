@@ -1,6 +1,6 @@
 {
   "name": "samuelsihotang1/laravel-vote",
-  "description": "The package helps you to add user based vote system to your model, fork from samuelsihotang1/laravel-vote",
+  "description": "The package helps you to add user based vote system to your model, fork from jcc/laravel-vote",
   "authors": [
     {
       "name": "samuelsihotang1",
