@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Facades\Auth;
 use samuelsihotang1\LaravelVote\Events\CancelVoted;
 use samuelsihotang1\LaravelVote\Events\Voted;
-use Illuminate\Database\Eloquent\Relations\BelongsTo
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\App;
+
 
 
 /**
